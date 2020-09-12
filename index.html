@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parse Tree</title>
+    <style>
+        #body {
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://unpkg.com/gojs/release/go-debug.js"></script>
+</head>
+
+<body>
+    <div class="card">
+        <div class="card-header">
+            <h1>Parse Tree</h1>
+        </div>
+    </div>
+    <div id="body">
+        <div>
+            <h2>Language</h2>
+            <div class="card" style="width: 18rem;">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">E -> EAT | T</li>
+                    <li class="list-group-item">A -> + | -</li>
+                    <li class="list-group-item">B -> * | /</li>
+                    <li class="list-group-item">T -> TBF | F</li>
+                    <li class="list-group-item">F -> (E) | id | -F | num</li>
+                </ul>
+            </div>
+            <br><br>
+            <h3>Check out Grammer</h3>
+            <p>toggle to see the next parse tree</p>
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-action active" value="1"
+                    onclick="checkParseTree(this.value)">
+                    id * num + id - num / id
+                </li>
+                <li class="list-group-item list-group-item-action" value="2" onclick="checkParseTree(this.value)">
+                    -id * ( num + num ) / id
+                </li>
+            </ul>
+        </div>
+        <!-- The DIV for a Diagram needs an explicit size or else we will not see anything.
+         In this case we also add a background color so we can see that area. -->
+        <div id="myDiagramDiv" style="width:600px; height:500px; background-color: #DAE4E4;"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
