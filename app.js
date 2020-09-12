@@ -51,8 +51,7 @@ function generaterParseTree(question) {
 }
 
 function checkParseTree(value) {
-    console.log(value);
-    if (value === 1) {
+    if (value === '1') {
         return generaterParseTree(question1);
     }
     generaterParseTree(question2);
@@ -146,7 +145,7 @@ let question1 = {
                                     name: 'F',
                                     children: [
                                         {
-                                            name: 'id',
+                                            name: 'num',
                                         }
                                     ]
                                 }
@@ -155,7 +154,7 @@ let question1 = {
                             name: 'B',
                             children: [
                                 {
-                                    name: '-',
+                                    name: '/',
                                 }
                             ]
                         }, {
